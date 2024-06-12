@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import { Spotlight } from "./ui/Spotlight";
@@ -7,11 +7,11 @@ import MagicButton from "./ui/MagicButton";
 import { FaLocationArrow } from "react-icons/fa";
 
 const Hero = () => {
-  const handleClick = () => {
+  const handleClick: any = () => {
     console.log("Clicked!");
   };
   return (
-    <div className="pb-20 pt-36">
+    <div className="pb-20 pt-36" id="home">
       <div>
         <Spotlight
           className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
@@ -32,30 +32,35 @@ const Hero = () => {
          bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"
         />
       </div>
-      <div className="flex justify-center relative my-20 z-10">
-        <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
-          <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-            Dynamic Web Magic with Next.js
-          </p>
-          <TextGenerateEffect
-            words="Transforming Concepts into Seamless User Experiences"
-            className="text-center text-[40px] md:text-5xl lg:text-6xl"
-          />
-
-          <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi! I&apos;m Mavene, a FrontEnd Developer based in Kenya.
-          </p>
-
-          <a href="#about">
-            <MagicButton
-              title="Show my work"
-              icon={<FaLocationArrow />}
-              position="right"
-              handleClick={handleClick}
+        <div className="flex justify-center relative my-20 z-10">
+          <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
+            <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
+              Dynamic Web Magic with Next.js
+            </p>
+            <TextGenerateEffect
+              words="Transforming Concepts into Seamless User Experiences"
+              className="text-center text-[40px] md:text-5xl lg:text-6xl"
             />
-          </a>
+
+            <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
+              Hi! I&apos;m Mavene, a FrontEnd Developer based in Kenya.
+            </p>
+
+            <a href="#about">
+              <MagicButton
+                title="Show my work"
+                icon={<FaLocationArrow />}
+                position="right"
+                handleClick={handleClick}
+              />
+            </a>
+          </div>
+          <img
+            src="/photo4min.jpg"
+            alt="my-photo"
+            className="lg:w-64 md:w-40 w-32 rounded-lg"
+          />
         </div>
-      </div>
     </div>
   );
 };
