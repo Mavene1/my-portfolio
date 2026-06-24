@@ -5,8 +5,7 @@ import { Spotlight } from "@/components/common/spotlight";
 import { TextGenerateEffect } from "@/components/common/text-generate-effect";
 import MagicButton from "@/components/common/magic-button";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { MoveRight, Download, MapPin, Mail } from "@/lib/icons";
+import { MoveRight, MapPin, Mail } from "@/lib/icons";
 import { FadeUp, StaggerContainer, staggerItem, motion } from "@/components/motion";
 
 const ROLES = [
@@ -90,16 +89,6 @@ export default function Hero() {
                   otherClasses="!bg-[#161A31]"
                 />
               </Link>
-              <Button
-                asChild
-                variant="outline"
-                className="w-full md:w-auto border-white/[0.15] bg-transparent text-white-200 hover:bg-white/[0.06] hover:border-purple/50 hover:text-white h-12 px-6 gap-2"
-              >
-                <a href="/mavene-omondi-cv.pdf" download>
-                  <Download className="h-4 w-4" />
-                  Download CV
-                </a>
-              </Button>
             </div>
           </FadeUp>
 
