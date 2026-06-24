@@ -10,7 +10,7 @@ export const skillCategories: SkillCategory[] = [
     id: 1,
     category: "Frontend",
     icon: "MonitorSmartphone",
-    skills: ["React.js", "Next.js 15", "TypeScript", "JavaScript", "Tailwind CSS", "Material-UI", "Zustand", "TanStack Query", "Apollo Client", "Angular.js"],
+    skills: ["React.js", "Next.js 15", "TypeScript", "JavaScript", "Tailwind CSS", "Material-UI", "Redux / React Redux", "Zustand", "TanStack Query", "Apollo Client", "Angular.js", "Figma", "Accessibility (ARIA, WCAG)", "Core Web Vitals"],
   },
   {
     id: 2,

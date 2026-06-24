@@ -93,7 +93,7 @@ export default function Hero() {
               <Button
                 asChild
                 variant="outline"
-                className="border-white/[0.15] bg-transparent text-white-200 hover:bg-white/[0.06] hover:border-purple/50 hover:text-white h-12 px-6 gap-2"
+                className="w-full md:w-auto border-white/[0.15] bg-transparent text-white-200 hover:bg-white/[0.06] hover:border-purple/50 hover:text-white h-12 px-6 gap-2"
               >
                 <a href="/mavene-omondi-cv.pdf" download>
                   <Download className="h-4 w-4" />
