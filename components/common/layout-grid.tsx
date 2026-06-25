@@ -1,9 +1,12 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+
+import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/common/moving-borders";
+import { useLayoutGrid } from "@/hooks/ui/use-layout-grid";
+import { useImageLoad } from "@/hooks/ui/use-image-load";
 
 type Card = {
   id: number;
@@ -13,33 +16,16 @@ type Card = {
 };
 
 export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
-  const [selected, setSelected] = useState<Card | null>(null);
-  const [lastSelected, setLastSelected] = useState<Card | null>(null);
-
-  const handleClick = (card: Card) => {
-    setLastSelected(selected);
-    setSelected(card);
-  };
-
-  const handleOutsideClick = () => {
-    setLastSelected(selected);
-    setSelected(null);
-  };
+  const { selected, lastSelected, handleClick, handleOutsideClick } = useLayoutGrid();
 
   return (
-    // change md:grid-cols-3 to md:grid-cols-4, gap-4 to gap-10
     <div className="w-full h-full p-10 grid grid-cols-1 md:grid-cols-4 max-w-7xl mx-auto gap-10 ">
       {cards.map((card, i) => (
         <Button
           key={i}
           borderRadius="1.75rem"
-          //   default is 2000
           duration={10000}
-          //   add className={cn(card.className, "")}
-          className={cn(
-            card.className
-            // "bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
-          )}
+          className={cn(card.className)}
         >
           <div
             className={cn(
@@ -79,14 +65,13 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
 };
 
 const BlurImage = ({ card }: { card: Card }) => {
-  const [loaded, setLoaded] = useState(false);
+  const { loaded, onLoad } = useImageLoad();
   return (
     <Image
       src={card.thumbnail}
-      //   change image scale 500 to 100
       height="100"
       width="100"
-      onLoad={() => setLoaded(true)}
+      onLoad={onLoad}
       className={cn(
         "object-cover object-top absolute inset-0 h-full w-full transition duration-200",
         loaded ? "blur-none" : "blur-md"
@@ -100,27 +85,14 @@ const SelectedCard = ({ selected }: { selected: Card | null }) => {
   return (
     <div className="bg-transparent h-full w-full flex flex-col justify-end rounded-lg shadow-2xl relative z-[60]">
       <motion.div
-        initial={{
-          opacity: 0,
-        }}
-        animate={{
-          opacity: 0.6,
-        }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.6 }}
         className="absolute inset-0 h-full w-full bg-black opacity-60 z-10"
       />
       <motion.div
-        initial={{
-          opacity: 0,
-          y: 100,
-        }}
-        animate={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          duration: 0.3,
-          ease: "easeInOut",
-        }}
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
         className="relative px-8 pb-4 z-[70]"
       >
         {selected?.content}

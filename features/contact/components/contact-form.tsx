@@ -1,8 +1,5 @@
 "use client";
 
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,31 +12,11 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Send, CheckCircle, Loader2 } from "@/lib/icons";
-import { contactSchema, type ContactFormData } from "../schemas";
 import { ScrollReveal } from "@/components/motion";
-
-type FormState = "idle" | "submitting" | "success" | "error";
+import { useContactForm } from "@/features/contact/hooks/use-contact-form";
 
 export function ContactForm() {
-  const [formState, setFormState] = useState<FormState>("idle");
-
-  const form = useForm<ContactFormData>({
-    resolver: zodResolver(contactSchema),
-    defaultValues: { name: "", email: "", subject: "", message: "" },
-  });
-
-  async function onSubmit(data: ContactFormData) {
-    setFormState("submitting");
-    try {
-      await new Promise((r) => setTimeout(r, 1200));
-      // TODO: wire to real endpoint (e.g. Resend, Formspree, or API route)
-      console.log("Contact form data:", data);
-      setFormState("success");
-      form.reset();
-    } catch {
-      setFormState("error");
-    }
-  }
+  const { form, formState, setFormState, onSubmit } = useContactForm();
 
   if (formState === "success") {
     return (
