@@ -9,9 +9,9 @@ import { Badge } from "@/components/ui/badge";
 import { ScrollReveal } from "@/components/motion";
 
 const statusColors: Record<string, string> = {
-  "in-progress": "bg-yellow-500/15 text-yellow-400 border-yellow-500/30",
-  live: "bg-green-500/15 text-green-400 border-green-500/30",
-  completed: "bg-blue-500/15 text-blue-400 border-blue-500/30",
+  "in-progress": "bg-yellow-500/10 text-yellow-400 border-yellow-500/25",
+  live: "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
+  completed: "bg-blue-500/10 text-blue-400 border-blue-500/25",
 };
 
 const statusLabels: Record<string, string> = {
@@ -87,12 +87,12 @@ export default function RecentProjects() {
                 ))}
               </div>
 
-              <div className="flex items-center justify-between mt-5 mb-3">
+              <div className="flex items-center justify-between mt-5 mb-3 pt-4 border-t border-white/[0.06]">
                 <div className="flex items-center">
                   {item.iconLists.map((icon, index) => (
                     <div
                       key={index}
-                      className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                      className="border border-white/[.12] rounded-full bg-[#0d1030] lg:w-9 lg:h-9 w-8 h-8 flex justify-center items-center hover:border-purple/30 transition-colors"
                       style={{ transform: `translateX(-${5 * index + 2}px)` }}
                     >
                       <img src={icon} alt="" className="p-2" />
@@ -102,13 +102,13 @@ export default function RecentProjects() {
 
                 <Link
                   href={`/projects/${item.slug}`}
-                  className="flex justify-center items-center gap-1.5 group"
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-purple/10 border border-purple/20 hover:bg-purple/20 hover:border-purple/40 transition-all group"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <span className="text-sm text-purple group-hover:underline underline-offset-2 transition-all">
+                  <span className="text-xs font-semibold text-purple">
                     {item.status === "in-progress" ? "In Progress" : "View Details"}
                   </span>
-                  <ArrowUpRight className="h-4 w-4 text-purple group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  <ArrowUpRight className="h-3.5 w-3.5 text-purple group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </Link>
               </div>
             </PinContainer>

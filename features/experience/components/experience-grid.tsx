@@ -1,8 +1,18 @@
 import { workExperience } from "@/data";
-import { Building2, Calendar } from "@/lib/icons";
+import { Building2, Calendar, Layers, Server, Shield, Smartphone, Code2 } from "@/lib/icons";
+import type { LucideIcon } from "@/lib/icons";
 import { Button } from "@/components/common/moving-borders";
 import { Badge } from "@/components/ui/badge";
 import { PageHeader } from "@/components/common/page-header";
+
+const roleIcons: Record<string, LucideIcon> = {
+  "Frontend Lead & Software Engineer": Layers,
+  "Platform, DevSecOps & Observability": Shield,
+  "Backend & API Integration": Server,
+  "Mobile Developer": Smartphone,
+  "IT Consultant Intern": Code2,
+  "IT / Telecoms Intern": Server,
+};
 
 export default function Experience() {
   return (
@@ -29,8 +39,8 @@ export default function Experience() {
             <div className="flex flex-col p-5 lg:p-8 gap-4">
               {/* Header */}
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#10132E] border border-white/[0.06] flex items-center justify-center">
-                  <img src={card.thumbnail} alt="" className="w-7 h-7 object-contain" />
+                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-purple/10 border border-purple/20 flex items-center justify-center">
+                  {(() => { const Icon = roleIcons[card.title] ?? Code2; return <Icon className="h-5 w-5 text-purple" />; })()}
                 </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-base md:text-lg font-bold text-white leading-tight">

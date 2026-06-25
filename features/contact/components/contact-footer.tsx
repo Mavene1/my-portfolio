@@ -36,18 +36,18 @@ export default function Footer() {
 
       {/* Contact info cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {CONTACT_ITEMS.map(({ icon: Icon, label, value, href }) => (
-          <FadeUp key={label}>
+        {CONTACT_ITEMS.map(({ icon: Icon, label, value, href }, i) => (
+          <FadeUp key={label} delay={i * 0.06}>
             <a
               href={href}
-              className="flex items-center gap-4 p-5 rounded-2xl bg-[#0a0d1f] border border-white/[0.06] hover:border-purple/30 transition-colors group"
+              className="flex items-center gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-purple/25 hover:bg-purple/[0.03] transition-all group"
             >
-              <div className="w-10 h-10 rounded-xl bg-[#10132E] border border-white/[0.06] flex items-center justify-center flex-shrink-0 group-hover:border-purple/20 transition-colors">
+              <div className="w-10 h-10 rounded-xl bg-purple/10 border border-purple/20 flex items-center justify-center flex-shrink-0 group-hover:bg-purple/15 transition-colors">
                 <Icon className="h-4 w-4 text-purple" />
               </div>
               <div>
-                <p className="text-xs text-white-200 mb-0.5">{label}</p>
-                <p className="text-sm text-white font-medium">{value}</p>
+                <p className="text-[11px] text-white/35 mb-0.5 uppercase tracking-wide">{label}</p>
+                <p className="text-sm text-white/80 font-medium group-hover:text-white transition-colors">{value}</p>
               </div>
             </a>
           </FadeUp>

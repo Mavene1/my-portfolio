@@ -98,7 +98,7 @@ export default function Hero() {
               <motion.div key={badge.label} variants={staggerItem}>
                 <Badge
                   variant="outline"
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#10132E] border-white/[0.06] text-white-200 text-xs"
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.03] border-white/[0.07] text-white/60 text-xs hover:border-white/[0.15] hover:text-white/80 transition-colors"
                 >
                   <span>{badge.icon}</span>
                   <span>{badge.label}</span>
