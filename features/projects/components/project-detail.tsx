@@ -352,9 +352,9 @@ export default function ProjectDetail({ project }: { project: Project }) {
             <div className="space-y-6">
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {project.metrics.map((metric, i) => (
-                  <ScrollReveal key={metric.label} delay={i * 0.06}>
-                    <div className="rounded-2xl border border-white/[0.06] bg-gradient-to-b from-white/[0.03] to-transparent p-6 text-center group hover:border-purple/20 transition-colors">
-                      <p className="text-4xl md:text-5xl font-black text-white tracking-tight mb-2 group-hover:text-purple transition-colors">
+                  <ScrollReveal key={metric.label} delay={i * 0.06} className="h-full">
+                    <div className="rounded-2xl border border-white/[0.06] bg-gradient-to-b from-white/[0.03] to-transparent p-6 text-center group hover:border-purple/20 transition-colors h-full flex flex-col justify-center">
+                      <p className="text-4xl md:text-5xl font-black text-white tracking-tight leading-tight mb-2 group-hover:text-purple transition-colors">
                         {metric.value}
                       </p>
                       <p className="text-sm font-semibold text-white/70 mb-1">{metric.label}</p>
