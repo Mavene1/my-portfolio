@@ -13,7 +13,7 @@ export default function Footer() {
     <div className="w-full relative" id="contact">
       {/* Background grid */}
       <div className="w-full absolute left-0 -bottom-72 min-h-96 pointer-events-none">
-        <img src="/footer-grid.svg" alt="" aria-hidden className="w-full h-full opacity-50" />
+        <img src="/images/footer-grid.svg" alt="" aria-hidden className="w-full h-full opacity-50" />
       </div>
 
       <ScrollReveal className="flex flex-col items-center text-center mb-16">

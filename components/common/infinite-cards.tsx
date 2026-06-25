@@ -116,7 +116,6 @@ export const InfiniteMovingCards = ({
               </span>
               <div className="relative z-20 mt-6 flex flex-row items-center gap-3">
                 <Avatar className="h-10 w-10 border border-white/[0.1]">
-                  <AvatarImage src="/profile.svg" alt={item.name} />
                   <AvatarFallback className="bg-[#10132E] text-white text-xs font-bold">
                     {item.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
                   </AvatarFallback>

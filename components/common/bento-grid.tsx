@@ -143,7 +143,7 @@ export const BentoGridItem = ({
             <div className="mt-5 relative">
               {copied && (
                 <div className="absolute -bottom-5 right-0">
-                  <img src="/confetti.gif" alt="confetti" className="h-[200px] w-[400px] object-contain" />
+                  <img src="/images/confetti.gif" alt="confetti" className="h-[200px] w-[400px] object-contain" />
                 </div>
               )}
               <Tooltip>

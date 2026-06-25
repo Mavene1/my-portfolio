@@ -123,7 +123,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
             {/* Right: project image */}
             <div className="lg:w-72 xl:w-80 flex-shrink-0 flex items-center justify-center">
               <div className="relative w-full aspect-square max-w-[280px] rounded-xl overflow-hidden bg-[#13162D] border border-white/[0.06]">
-                <img src="/bg.png" alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover opacity-60" />
+                <img src="/images/bg.png" alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover opacity-60" />
                 <img
                   src={project.img}
                   alt={project.title}

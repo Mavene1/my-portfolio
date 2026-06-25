@@ -113,7 +113,7 @@ export default function Hero() {
           <div className="relative">
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple/20 to-blue-100/10 blur-2xl scale-110" />
             <img
-              src="/photo4min.jpg"
+              src="/images/photo4min.jpg"
               alt="Mavene Omondi"
               className="relative lg:w-72 md:w-56 w-44 rounded-2xl shadow-2xl border border-white/[0.08] object-cover object-top transition-transform duration-500 hover:scale-[1.02]"
             />

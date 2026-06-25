@@ -1,6 +1,5 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
 
 const World = dynamic(() => import("@/components/three/globe").then((m) => m.World), {
@@ -8,6 +7,16 @@ const World = dynamic(() => import("@/components/three/globe").then((m) => m.Wor
 });
 
 const GridGlobe = () => {
+  useEffect(() => {
+    // three-globe bundles its own three.js which emits a deprecation warning for
+    // THREE.Clock (deprecated in r183). Suppress it since we can't patch the vendor bundle.
+    const _warn = console.warn.bind(console);
+    console.warn = (...args: unknown[]) => {
+      if (typeof args[0] === "string" && args[0].startsWith("THREE.Clock:")) return;
+      _warn(...args);
+    };
+    return () => { console.warn = _warn; };
+  }, []);
   const globeConfig = {
     pointSize: 4,
     globeColor: "#062056",

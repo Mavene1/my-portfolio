@@ -26,10 +26,10 @@ export const testimonials: Testimonial[] = [
 ];
 
 export const techStack = [
-  { id: 1, name: "Next.js", img: "/next.svg" },
-  { id: 2, name: "React", img: "/re.svg" },
-  { id: 3, name: "TypeScript", img: "/ts.svg" },
-  { id: 4, name: "Tailwind CSS", img: "/tail.svg" },
-  { id: 5, name: "Three.js", img: "/three.svg" },
-  { id: 6, name: "Framer Motion", img: "/fm.svg" },
+  { id: 1, name: "Next.js", img: "/icons/next.svg" },
+  { id: 2, name: "React", img: "/icons/re.svg" },
+  { id: 3, name: "TypeScript", img: "/icons/ts.svg" },
+  { id: 4, name: "Tailwind CSS", img: "/icons/tail.svg" },
+  { id: 5, name: "Three.js", img: "/icons/three.svg" },
+  { id: 6, name: "Framer Motion", img: "/icons/fm.svg" },
 ];
