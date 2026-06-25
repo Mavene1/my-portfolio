@@ -100,12 +100,16 @@ export default function RecentProjects() {
                   ))}
                 </div>
 
-                <div className="flex justify-center items-center gap-1.5">
-                  <span className="text-sm text-purple">
+                <Link
+                  href={`/projects/${item.slug}`}
+                  className="flex justify-center items-center gap-1.5 group"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <span className="text-sm text-purple group-hover:underline underline-offset-2 transition-all">
                     {item.status === "in-progress" ? "In Progress" : "View Details"}
                   </span>
-                  <ArrowUpRight className="h-4 w-4 text-purple" />
-                </div>
+                  <ArrowUpRight className="h-4 w-4 text-purple group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </Link>
               </div>
             </PinContainer>
           </ScrollReveal>
